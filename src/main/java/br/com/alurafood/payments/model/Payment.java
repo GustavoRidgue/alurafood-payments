@@ -2,20 +2,19 @@ package br.com.alurafood.payments.model;
 
 import br.com.alurafood.payments.model.enums.Status;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "payments")
+@Table(name = "pagamentos")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -30,7 +29,7 @@ public class Payment {
     @Positive
     private BigDecimal valor;
 
-    @NotBlank
+    @javax.validation.constraints.NotBlank
     @Size(max=100)
     private String nome;
 
